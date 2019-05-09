@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="nhap" type="text"/>
+<input type="button" value="onclick" onclick="ketqua()"><br><br>
+<p>KetQua</p><br><br>
+<p id="rs"></p>
+<script>
+    function ketqua() {
+        let a=document.getElementById("nhap").value;
+        let b=a.toString();
+        let mang=[];
+        let hoa='QWERTYUIOPASDFGHJKLZXCVBNM'
+        let thuong='qwertyuiopasdfghjklzxcvbnm'
+        for (let i=0 ; i<b.length;i++){
+            if (hoa.includes(b[i])){
+                mang.push(b[i].toLowerCase())
+            } else if (thuong.includes(b[i])){
+                mang.push(b[i].toUpperCase())
+            } else{
+                mang.push(b[i])
+            }
+        }
+        console.log(mang.join(''))
+        document.getElementById("rs").innerHTML=mang.join('')
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" id="nhap">
+<input type="button" value="onclick" onclick="ketqua()"><br><br>
+<p>Ketqua:</p><br><br>
+<p id="rs"></p>
+
+<script>
+    function ketqua() {
+        let num=document.getElementById("nhap").value
+        let x=num.toString()
+        let a=[x[0]]
+        for (i=1;i<x.length;i++){
+            if (x[i]%2===0&&x[i-1]%2===0){
+                a.push("-" , x[i])
+            }else {
+                a.push(x[i])
+            }
+        }
+        document.getElementById("rs").innerHTML=a.join('')
+    }
+</script>
+</body>
+</html>
